@@ -1,0 +1,159 @@
+/* ─── ShopEase Responsive Styles ─────────────────────────────────────────── */
+/* Mobile: max-width 768px | Tablet: max-width 1024px */
+
+/* ── Navbar ── */
+.nav-center-links { display: flex; }
+.nav-hamburger    { display: none !important; }
+.nav-mobile-menu  { display: none; }
+
+@media (max-width: 768px) {
+  .nav-center-links { display: none !important; }
+  .nav-hamburger {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 0.4rem 0.65rem;
+    cursor: pointer;
+    font-size: 1.15rem;
+    color: #444;
+    transition: all 0.15s;
+    line-height: 1;
+  }
+  .nav-hamburger:hover { border-color: #ff6900; color: #ff6900; }
+  .nav-mobile-menu.open {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid #eee;
+    padding: 0.5rem;
+    z-index: 997;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    gap: 0.1rem;
+  }
+  .nav-mobile-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Inter', 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #444;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    text-align: left;
+    width: 100%;
+    transition: background 0.12s;
+  }
+  .nav-mobile-item:hover { background: #fff8f5; color: #ff6900; }
+  .nav-mobile-divider { height: 1px; background: #eee; margin: 0.25rem 0.5rem; }
+  .nav-mobile-logout { color: #dc2626 !important; }
+  .nav-mobile-logout:hover { background: #fee2e2 !important; }
+}
+
+/* ── Step progress bar — hide labels and separators on very small screens ── */
+@media (max-width: 480px) {
+  .step-label     { display: none !important; }
+  .step-separator { display: none !important; }
+}
+
+/* ── Page containers ── */
+@media (max-width: 768px) {
+  .page-container { padding: 1.5rem 1rem !important; }
+}
+
+/* ── Checkout: 2-col → 1-col on mobile ── */
+@media (max-width: 768px) {
+  .checkout-grid    { grid-template-columns: 1fr !important; }
+  .checkout-summary { position: static !important; }
+}
+
+/* ── Cart: 2-col → 1-col on mobile ── */
+@media (max-width: 768px) {
+  .cart-grid { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 480px) {
+  .cart-item-row  { flex-wrap: wrap !important; }
+  .cart-qty-btn   { width: 44px !important; height: 44px !important; font-size: 1.1rem !important; }
+}
+
+/* ── Shop product grid ── */
+@media (max-width: 1024px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  .product-grid { grid-template-columns: repeat(1, 1fr) !important; }
+}
+
+/* ── Home: hero section ── */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 40px !important;
+    min-height: unset !important;
+  }
+}
+
+/* ── Home: hero grid ── */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    min-height: unset !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .hero-cards-col { display: none !important; }
+  .hero-btns { flex-wrap: wrap !important; }
+  .hero-btn  { width: 100% !important; }
+}
+
+/* ── Home: categories grid ── */
+@media (max-width: 768px) {
+  .categories-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ── Home: featured + how-it-works grids ── */
+@media (max-width: 768px) {
+  .featured-grid    { grid-template-columns: repeat(2, 1fr) !important; }
+  .howitworks-grid  { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 400px) {
+  .featured-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── QR page: bigger QR on mobile ── */
+@media (max-width: 768px) {
+  .qr-image       { width: 260px !important; height: 260px !important; }
+  .qr-placeholder { width: 260px !important; height: 260px !important; }
+}
+
+/* ── Product detail: 2-col → 1-col ── */
+@media (max-width: 768px) {
+  .product-detail-grid        { grid-template-columns: 1fr !important; }
+  .product-detail-bottom-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── Order history summary stats ── */
+@media (max-width: 480px) {
+  .orders-summary-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── Confirmation buttons ── */
+@media (max-width: 480px) {
+  .confirmation-btns { flex-direction: column !important; }
+}
+
+/* ── QR page tip (visible always, prominent on mobile) ── */
+.qr-mobile-tip { display: none; }
+@media (max-width: 768px) {
+  .qr-mobile-tip { display: flex !important; }
+}
